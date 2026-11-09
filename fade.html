@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        h1,p,ul{
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="heding">Heading with class</h1>
+    <p>heading without class</h1>
+
+    <ul >
+      <li>joy banla</li>
+      <li>sonar bangla</li>
+      <li>corrupt bangla</li>
+      <li>useless bangla</li>
+      <li>boltur bangla</li>
+    </ul>
+
+    <button class="btn1">fade in</button> <br />
+    <button class="btn2">fade out</button> <br />
+    <button class="btn3">toggle</button>
+
+    <script>
+      $(document).ready(function () {
+        $(".btn1").click(function () {
+          $("h1.heding").fadeIn();
+          $("p").fadeIn('slow');
+          $("ul").fadeIn(3000);
+        });
+        $(".btn2").click(function () {
+          $("h1.heding").fadeOut();
+          $("p").fadeOut('slow');
+          $("ul").fadeOut(3000);
+        });
+        $(".btn3").click(function () {
+          $("h1.heding").fadeToggle();
+          $("p").fadeToggle('slow');
+          $("ul").fadeToggle(3000);
+        });
+      });
+    </script>
+  </body>
+</html>

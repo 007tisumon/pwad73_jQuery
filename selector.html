@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="heding">Heading with class</h1>
+    <h1>heading without class</h1>
+
+
+    <ul>
+        <li>joy banla</li>
+        <li>sonar bangla</li>
+        <li>corrupt bangla</li>
+        <li>useless bangla</li>
+        <li>boltur bangla</li>
+    </ul>
+
+        <button class="btn1">click</button> <br>     <button class="btn2">heading hide</button> <br>     <button class="btn3">click</button>
+
+
+<script>
+    $(document).ready(function () {
+        $(".btn2").click(function(){
+            $("h1").hide();
+        })
+    });
+</script>
+</body>
+</html>
