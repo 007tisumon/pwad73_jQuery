@@ -28,9 +28,25 @@
 
             function getDta() {
                 $.get('student.php', function(data, status) {
+
                     $(".container").html(data)
+                    $(".btndel").click(function() {
+                        let id = this.id
+
+                        $.get("delete.php", {
+                            id
+                        }, function(data) {
+                            alert(data)
+                        })
+                        getDta()
+
+                    })
+
                 })
+
+
             }
+
             getDta();
 
             $('.send').click(function() {
@@ -47,6 +63,7 @@
                     let address = $('#address').val(" ")
                 })
             })
+
         });
     </script>
 </body>

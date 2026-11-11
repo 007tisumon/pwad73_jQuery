@@ -7,10 +7,11 @@ if (mysqli_connect_errno()) {
 $raws = $db->query("SELECT * FROM info");
 $output = "";
 ?>
-<table border="1">
+<table border="1"  >
     <tr>
         <th>Name</th>
         <th>Address</th>
+        <th>action</th>
     </tr>
 
 
@@ -19,7 +20,8 @@ $output = "";
         echo "
       <tr>
          <td> {$raw['name']} </td>
-        <td> {$raw['address']} </td>
+          <td> {$raw['address']} </td>
+          <td> Edit | <button id={$raw['id']} class='btndel'>DELETE</button> </td>
       </tr>
     
     ";
