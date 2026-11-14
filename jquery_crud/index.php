@@ -30,17 +30,6 @@
                 $.get('student.php', function(data, status) {
 
                     $(".container").html(data)
-                    $(".btndel").click(function() {
-                        let id = this.id
-
-                        $.get("delete.php", {
-                            id
-                        }, function(data) {
-                            alert(data)
-                        })
-                        getDta()
-
-                    })
 
                 })
 
@@ -48,6 +37,8 @@
             }
 
             getDta();
+
+
 
             $('.send').click(function() {
                 let name = $('#name').val()
@@ -62,6 +53,26 @@
                     let name = $('#name').val(" ")
                     let address = $('#address').val(" ")
                 })
+            })
+            // delete data 
+            $(document).on('click','.btndel', function(data) {
+                let id = this.id;
+                // alert(data)
+                // console.log("clooo")
+                let $row = $(this).closest('tr'); // Find the table row containing this button
+                console.log($row)
+
+                $.get("delete.php", {
+                    id: id
+                }, function(response) {
+                    alert(response);
+
+                    // Fade out and remove just this specific row from the HTML
+                    $row.fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                });
+
             })
 
         });
